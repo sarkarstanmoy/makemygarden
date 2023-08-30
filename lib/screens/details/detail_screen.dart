@@ -1,6 +1,7 @@
 import 'package:flutter/material.dart';
 import 'package:get/get.dart';
 import 'package:make_my_garden/screens/details/components/body.dart';
+import 'package:make_my_garden/screens/details/components/llmwidget.dart';
 
 class DetailScreen extends StatelessWidget {
   const DetailScreen({super.key});
@@ -24,10 +25,10 @@ class DetailScreen extends StatelessWidget {
         children: [
           Body(),
           Padding(
-            padding: const EdgeInsets.all(8.0),
+            padding: const EdgeInsets.only(left: 8.0),
             child: Align(
               alignment: Alignment.centerLeft,
-                child: Text("Hibiscus",style: Theme.of(context).textTheme.headlineMedium?.copyWith(color: Colors.black,fontWeight: FontWeight.bold))),
+                child: Text("Hibiscus",style: Theme.of(context).textTheme.displaySmall,)),
           ),
           Padding(
             padding: const EdgeInsets.all(8.0),
@@ -38,8 +39,8 @@ class DetailScreen extends StatelessWidget {
                 Text("10",style: Theme.of(context).textTheme.headlineSmall?.copyWith(color: Colors.green)),
               ],
             ),
-          )
-
+          ),
+          const LLMWidget()
         ],
       ),
     );

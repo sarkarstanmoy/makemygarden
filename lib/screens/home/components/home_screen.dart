@@ -1,10 +1,22 @@
 import 'package:flutter/material.dart';
 import 'package:get/get.dart';
+import 'package:google_fonts/google_fonts.dart';
 import 'package:make_my_garden/screens/home/components/body.dart';
+
+import '../../../themes/colorscheme.dart';
 
 
 class HomeScreen extends StatelessWidget {
   const HomeScreen({super.key});
+
+  ThemeData _buildDarkTheme() {
+    var baseTheme = ThemeData(brightness: Brightness.dark);
+
+    return baseTheme.copyWith(
+        colorScheme: darkColorScheme,
+      textTheme: GoogleFonts.poppinsTextTheme(baseTheme.textTheme),
+    );
+  }
 
   @override
   Widget build(BuildContext context) {
@@ -25,10 +37,11 @@ class HomeScreen extends StatelessWidget {
       actions: [
         IconButton(onPressed: (){
           Get.changeTheme(Get.isDarkMode? ThemeData.light(useMaterial3: true).copyWith(
-            colorScheme: ColorScheme.fromSeed(seedColor: Colors.green.shade400),
+            colorScheme: lightColorScheme,
+              textTheme: GoogleFonts.poppinsTextTheme(),
               appBarTheme: const AppBarTheme(backgroundColor:Colors.green)
 
-          ): ThemeData.dark(useMaterial3: true));
+          ): _buildDarkTheme());
         }, icon: const Icon(Icons.change_circle))
       ],
     );

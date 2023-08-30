@@ -14,8 +14,8 @@ class RecommendedPlants extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return Container(
-      width: 210,
-      height: 380,
+      width: 240,
+      height: 400,
       margin: const EdgeInsets.only(left: 0,right: 10,top: 10),
       child: Card(
         elevation: 10,
@@ -23,7 +23,10 @@ class RecommendedPlants extends StatelessWidget {
           children: [
             ListTile(
               title: Text(title),
-              subtitle: Text(subTitle),
+              subtitle: Padding(
+                padding: const EdgeInsets.only(top:8),
+                child: Text(subTitle),
+              ),
             ),
             InkWell(
                 onTap: (){
@@ -31,7 +34,7 @@ class RecommendedPlants extends StatelessWidget {
                 },
                 child: Image.asset('assets/images/$imageSrc')),
             Padding(
-              padding: const EdgeInsets.only(left: 10),
+              padding: const EdgeInsets.only(left: 10,top: 10),
                 child: Text(description)),
             ButtonBar(
               alignment: MainAxisAlignment.spaceEvenly,

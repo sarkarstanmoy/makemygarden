@@ -1,4 +1,5 @@
 <manifest xmlns:android="http://schemas.android.com/apk/res/android">
+
     <application
         android:label="make_my_garden"
         android:name="${applicationName}"
